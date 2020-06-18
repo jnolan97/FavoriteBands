@@ -1,0 +1,37 @@
+<mat-sidenav-container>
+    <!--SideNav-->
+    <mat-sidenav #drawer class="sidenav"
+    fixedInViewport [attr.role] = "(isHandset$ | async) ? 'dialog': 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over': 'side' "
+    [opened] = "false"
+    >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+        <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
+        <a mat-list-item routerLink="/addbio" (click)="drawer.close()">Add Bio</a>
+        <a mat-list-item routerLink="/funfacts" (click)="drawer.close()">Show Artists</a>
+    </mat-nav-list>
+</mat-sidenav>
+    <mat-sidenav-content>
+        <!--Top Full Toolbar-->
+        <mat-toolbar>
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+            *ngIf = "isHandset$ | async"
+            >
+            <mat-icon aria-label="Side nav toggle icon">Menu</mat-icon>
+            </button>
+
+            <span class="logo" routerLink="/">Jack's Favorite Musicians!</span>
+            <span class="fill-space"></span>
+            <div *ngIf="!(isHandset$ | async)">
+                <a mat-button routerLink="/">Home</a>
+                <a mat-button routerLink="/addbio">Add Bio</a>
+                <a mat-button routerLink="/funfacts">Show Artists</a>
+            </div>
+        </mat-toolbar>
+        <!--Angular Transclusion-->
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+
+    
+</mat-sidenav-container>

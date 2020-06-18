@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Add Artist Information</h1>
+
+    <form [formGroup]="addBioForm" (ngSubmit)="getArtistData()" >
+        <mat-form-field>
+            <mat-label>Artist Name</mat-label>
+            <input type="text" matInput placeholder="Artist Name" formControlName="artistName">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label># of LPs</mat-label>
+            <input type="text" matInput placeholder="LPs" formControlName="LPs">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Info</mat-label>
+            <input type="text" matInput placeholder="Info" formControlName="info">
+        </mat-form-field>
+        <br>
+        <!-- <p>{{ databinding }}</p>
+        <br> -->
+        <button type="submit" mat-raised-button>Submit</button>
+    </form>
+</div>
