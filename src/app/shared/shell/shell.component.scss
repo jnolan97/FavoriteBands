@@ -32,5 +32,8 @@
     z-index: 1;
 }
 .mat-toolbar{
-    background-color: green;
+    background: linear-gradient(green, lightgreen);
+}
+.mat-drawer-container{
+    background: linear-gradient(grey,lightgrey)
 }
