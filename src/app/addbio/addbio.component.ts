@@ -12,7 +12,7 @@ export class AddbioComponent implements OnInit {
     LPs: new FormControl(''),
     info: new FormControl('',Validators.required)
   })
-  // databinding: string=this.addBioForm.value.info
+  //databinding: string=this.addBioForm.value.info
   constructor() { }
   getArtistData(){
     console.log(this.addBioForm.value)
